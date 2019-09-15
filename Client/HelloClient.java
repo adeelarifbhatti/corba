@@ -1,4 +1,4 @@
-package HelloApp;
+package Client;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -6,6 +6,9 @@ import java.util.Calendar;
 import org.omg.CORBA.ORB;
 import org.omg.CosNaming.NamingContextExt;
 import org.omg.CosNaming.NamingContextExtHelper;
+
+import HelloApp.Hello;
+import HelloApp.HelloHelper;
 
 public class HelloClient {
 	public static void main (String args[]) {

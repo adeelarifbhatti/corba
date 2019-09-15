@@ -1,7 +1,9 @@
-package HelloApp;
+package Server;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
+import HelloApp.HelloPOA;
 
 public class HelloServant extends  HelloPOA {
 
