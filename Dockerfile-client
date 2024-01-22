@@ -1,0 +1,13 @@
+FROM ubuntu:latest
+LABEL maintainer="adeelarifbhatti@gmail.com"
+WORKDIR /app
+RUN apt-get update && apt-get install -y openjdk-8-jdk
+COPY idl idl
+COPY Client Client
+COPY start-client.sh ./
+RUN idlj -fall idl/Hello.idl
+RUN javac HelloApp/*.java
+RUN javac  Client/*.java
+# EXPOSE 8080 900
+RUN chmod +x ./start-client.sh
+ENTRYPOINT ["./start-client.sh"]
