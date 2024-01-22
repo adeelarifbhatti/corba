@@ -1,13 +1,11 @@
-How to run the Server
+## Corba "Hello world"
 
-Navigate in the Docker directory, there are two files for the docker-compose, one is docker-
-compose.yml file and the other is docker-compose-AllInOne.yml file. If you execute following
+It uses openjdk-8-jdk, later versions have discontinued the Corba support. The docker image is created by installing openjdk-8-jdk in ubuntu-latest, running idlj -fall idl/Hello.idl to get HelloApp generated. In the client image following commands are run
 
-“#docker-compose up”
-then two container will run, one will run the key/value server and the other will run the tomcat server
-for api along with the orbd server. The key/value server will work when it get connected with the orbd
-service running on the container which runs the tomcat server for api.
-If you run the following
-“#docker-compose -f docker-compose-AllInOne.yml up”
-then it will run all the three service i.e. key/value server, orbd service and the api service on one
-container.
+javac  Client/*.java
+javac  HelloApp/*.java
+
+ In the server image following commands are run
+
+javac  Server/*.java
+javac  HelloApp/*.java
